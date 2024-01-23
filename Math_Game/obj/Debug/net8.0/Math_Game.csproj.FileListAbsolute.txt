@@ -1,0 +1,15 @@
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\bin\Debug\net8.0\Math_Game.exe
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\bin\Debug\net8.0\Math_Game.deps.json
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\bin\Debug\net8.0\Math_Game.runtimeconfig.json
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\bin\Debug\net8.0\Math_Game.dll
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\bin\Debug\net8.0\Math_Game.pdb
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.AssemblyInfoInputs.cache
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.AssemblyInfo.cs
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.csproj.CoreCompileInputs.cache
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.sourcelink.json
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.dll
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\refint\Math_Game.dll
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.pdb
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\Math_Game.genruntimeconfig.cache
+C:\Users\dinoc\OneDrive\Documentos\estudos\c\projects\Math_Game\Math_Game\obj\Debug\net8.0\ref\Math_Game.dll
