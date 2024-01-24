@@ -38,12 +38,23 @@ static void Somar()
     Random rndx = new Random();
     Random rndy = new Random();
     int score = 0;
-    
+    MenuDificuldade();
+    string input = Console.ReadLine();
+    int diff = 0;
+    if (input == "1")
+    {
+        diff = 10;
+    } else if (input == "2")
+    {
+        diff = 20;
+    } else if (input == "3") {
+        diff = 30;
+    }
 
     for (int i = 0; i < 10; i++)
     {
-        int x = rndx.Next(1, 100);
-        int y = rndy.Next(1, 100);
+        int x = rndx.Next(1, diff);
+        int y = rndy.Next(1, diff);
         int result = x + y;
         Console.WriteLine($"{x} + {y} = ?");
         string user = Console.ReadLine();
