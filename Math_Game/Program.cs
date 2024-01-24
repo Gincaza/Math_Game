@@ -38,6 +38,8 @@ static void Somar()
     Random rndx = new Random();
     Random rndy = new Random();
     int score = 0;
+    
+
     for (int i = 0; i < 10; i++)
     {
         int x = rndx.Next(1, 100);
@@ -58,7 +60,25 @@ static void Somar()
 
 static void Subtrair()
 {
+    Random rndx = new Random();
+    Random rndy = new Random();
+    int score = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        int x = rndx.Next(1, 100);
+        int y = rndy.Next(1, 100);
+        int result = x - y;
+        Console.WriteLine($"{x} - {y} = ?");
+        string user = Console.ReadLine();
+        int usr = Convert.ToInt32(user);
 
+        if (usr == result)
+        {
+            score++;
+        }
+    }
+
+    Console.WriteLine($"Your Score is {score}");
 }
 
 static void Multiplicar()
@@ -69,6 +89,15 @@ static void Multiplicar()
 static void Dividir()
 {
 
+}
+
+static void MenuDificuldade()
+{
+    Console.WriteLine("====================================================================");
+    Console.WriteLine("Escolha uma dificuldade:");
+    Console.WriteLine("\t1 - Facil");
+    Console.WriteLine("\t2 - Medio");
+    Console.WriteLine("\t3 - Dificil");
 }
 
 Main();
