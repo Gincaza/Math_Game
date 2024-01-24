@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Math_Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93538ec5d43d02e9f3176d5bac57c253fa786e13")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dd726cabd522a94c27b0ccec864ef66c9d730af")]
 [assembly: System.Reflection.AssemblyProductAttribute("Math_Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Math_Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
