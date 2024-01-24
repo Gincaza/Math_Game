@@ -35,7 +35,25 @@ static void Menu()
 
 static void Somar()
 {
+    Random rndx = new Random();
+    Random rndy = new Random();
+    int score = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        int x = rndx.Next(1, 100);
+        int y = rndy.Next(1, 100);
+        int result = x + y;
+        Console.WriteLine($"{x} + {y} = ?");
+        string user = Console.ReadLine();
+        int usr = Convert.ToInt32(user);
 
+        if (usr == result)
+        {
+            score++;
+        }
+    }
+
+    Console.WriteLine($"Your Score is {score}");
 }
 
 static void Subtrair()
