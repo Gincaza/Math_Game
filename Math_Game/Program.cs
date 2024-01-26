@@ -10,73 +10,62 @@
 using System;
 using System.Timers;
 
-static void Main()
+class Program
 {
-    while (true)
+    //variavel Random para gerar os numeros
+    static Random random = new Random();
+    static void Main()
     {
-        Console.WriteLine("Bem vindo ao jogo de matemática. Meu primeiro projeto em C# btw.");
-        Menu();
-        string userInput = Console.ReadLine().Trim();
+        while (true)
+        {
+            Console.WriteLine("Bem vindo ao jogo de matemática. Meu primeiro projeto em C# btw.");
+            Menu();
+            string userInput = Console.ReadLine().Trim();
 
-        if (userInput == "1")
-        {
-            Somar();
-        }
-        else if (userInput == "2")
-        {
-            Subtrair();
-        }
-        else if (userInput == "3")
-        {
-            Multiplicar();
-        }
-        else if (userInput == "4")
-        {
-            Dividir();
-        }
-        else if (userInput == "0")
-        {
-            Console.WriteLine("Obrigado por jogar. Até logo!");
-            break;
-        }
-        else
-        {
-            Console.WriteLine("Opção inválida. Tente novamente.");
+            if (userInput == "1")
+            {
+                Somar();
+            }
+            else if (userInput == "2")
+            {
+                Subtrair();
+            }
+            else if (userInput == "3")
+            {
+                Multiplicar();
+            }
+            else if (userInput == "4")
+            {
+                Dividir();
+            }
+            else if (userInput == "0")
+            {
+                Console.WriteLine("Obrigado por jogar. Até logo!");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida. Tente novamente.");
+            }
         }
     }
-}
 
 
-static void Somar()
+    static void Somar()
     {
-        Random rndx = new Random();
-        Random rndy = new Random();
         int score = 0;
 
         // Exibe o menu de dificuldade
         MenuDificuldade();
         string input = Console.ReadLine();
 
-        // Configura a dificuldade com base na entrada do usuário
-        int diff = 0;
-        if (input == "1")
-        {
-            diff = 10;
-        }
-        else if (input == "2")
-        {
-            diff = 20;
-        }
-        else if (input == "3")
-        {
-            diff = 30;
-        }
+        int diff = ObterDificuldade(input);
 
         // Gera 10 perguntas e verifica as respostas do usuário
         for (int i = 0; i < 10; i++)
         {
-            int x = rndx.Next(1, diff);
-            int y = rndy.Next(1, diff);
+            int x = random.Next(1, diff);
+            int y = random.Next(1, diff);
             int result = x + y;
 
             // Exibe a pergunta
@@ -100,34 +89,17 @@ static void Somar()
 
     static void Subtrair()
     {
-        Random rndx = new Random();
-        Random rndy = new Random();
         int score = 0;
-
 
         MenuDificuldade();
         string input = Console.ReadLine();
 
-
-        int diff = 0;
-        if (input == "1")
-        {
-            diff = 10;
-        }
-        else if (input == "2")
-        {
-            diff = 20;
-        }
-        else if (input == "3")
-        {
-            diff = 30;
-        }
-
+        int diff = ObterDificuldade(input);
 
         for (int i = 0; i < 10; i++)
         {
-            int x = rndx.Next(1, diff);
-            int y = rndy.Next(1, diff);
+            int x = random.Next(1, diff);
+            int y = random.Next(1, diff);
             int result = x - y;
 
 
@@ -150,34 +122,19 @@ static void Somar()
 
     static void Multiplicar()
     {
-        Random rndx = new Random();
-        Random rndy = new Random();
         int score = 0;
 
 
         MenuDificuldade();
         string input = Console.ReadLine();
 
-
-        int diff = 0;
-        if (input == "1")
-        {
-            diff = 10;
-        }
-        else if (input == "2")
-        {
-            diff = 20;
-        }
-        else if (input == "3")
-        {
-            diff = 30;
-        }
+        int diff = ObterDificuldade(input);
 
 
         for (int i = 0; i < 10; i++)
         {
-            int x = rndx.Next(1, diff);
-            int y = rndy.Next(1, diff);
+            int x = random.Next(1, diff);
+            int y = random.Next(1, diff);
             int result = x * y;
 
 
@@ -200,34 +157,19 @@ static void Somar()
 
     static void Dividir()
     {
-        Random rndx = new Random();
-        Random rndy = new Random();
         int score = 0;
 
 
         MenuDificuldade();
         string input = Console.ReadLine();
 
-
-        int diff = 0;
-        if (input == "1")
-        {
-            diff = 10;
-        }
-        else if (input == "2")
-        {
-            diff = 20;
-        }
-        else if (input == "3")
-        {
-            diff = 30;
-        }
+        int diff = ObterDificuldade(input);
 
 
         for (int i = 0; i < 10; i++)
         {
-            int x = rndx.Next(1, diff);
-            int y = rndy.Next(1, diff);
+            int x = random.Next(1, diff);
+            int y = random.Next(1, diff);
             int result = x / y;
 
 
@@ -248,6 +190,28 @@ static void Somar()
         Console.WriteLine($"Your Score is {score}");
     }
 
+    static int ObterDificuldade(string input)
+    {
+        int diff = 0;
+
+        switch (input)
+        {
+            case "1":
+                diff = 10;
+                break;
+            case "2":
+                diff = 20;
+                break;
+            case "3":
+                diff = 30;
+                break;
+            default:
+                Console.WriteLine("Opção de dificuldade inválida. Definindo para Fácil por padrão.");
+                diff = 10;
+                break;
+        }
+        return diff;
+    }
     static void Menu()
     {
         Console.WriteLine("╔═════════════════════════════════════════════════════════════╗");
@@ -272,4 +236,4 @@ static void Somar()
         Console.WriteLine("---------------------------------------------------------------");
     }
 
-Main();
+}
