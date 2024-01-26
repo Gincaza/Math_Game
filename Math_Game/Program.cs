@@ -14,6 +14,7 @@ class Program
 {
     //variavel Random para gerar os numeros
     static Random random = new Random();
+    static List<string> historyArray = new List<string>();
     static void Main()
     {
         while (true)
@@ -37,6 +38,13 @@ class Program
             else if (userInput == "4")
             {
                 Dividir();
+            } else if (userInput == "9")
+            {
+                Console.WriteLine("Histórico:");
+                foreach (string item in historyArray)
+                {
+                    Console.WriteLine(item);
+                }
             }
             else if (userInput == "0")
             {
@@ -55,25 +63,45 @@ class Program
     {
         int score = 0;
 
-        // Exibe o menu de dificuldade
+        // Exibe o menu de dificuldade e obtém a escolha do usuário
         MenuDificuldade();
         string input = Console.ReadLine();
 
+        // Obtém a dificuldade com base na escolha do usuário
         int diff = ObterDificuldade(input);
 
         // Gera 10 perguntas e verifica as respostas do usuário
         for (int i = 0; i < 10; i++)
         {
+            // Gera dois números aleatórios dentro da faixa de dificuldade
             int x = random.Next(1, diff);
             int y = random.Next(1, diff);
             int result = x + y;
 
-            // Exibe a pergunta
+            // Exibe a pergunta ao usuário
             Console.WriteLine($"{x} + {y} = ?");
 
-            // Obtém a resposta do usuário
-            string user = Console.ReadLine();
-            int usr = Convert.ToInt32(user);
+
+            int usr;
+
+            // Loop para garantir que a entrada do usuário seja um número inteiro válido
+            while (true)
+            {
+                Console.Write("Sua resposta: ");
+                string userInput = Console.ReadLine();
+                historyArray.Add($"{x} + {y} = {result} | Sua resposta: {userInput}");
+
+                // Tenta converter a entrada do usuário para um número inteiro
+                if (int.TryParse(userInput, out usr))
+                {
+                    break; // Sai do loop se a conversão for bem-sucedida
+                }
+                else
+                {
+                    Console.WriteLine("Por favor, insira um valor numérico válido.");
+                }
+            }
+
 
             // Verifica se a resposta do usuário está correta e atualiza a pontuação
             if (usr == result)
@@ -82,8 +110,8 @@ class Program
             }
         }
 
-        // Exibe a pontuação final
-        Console.WriteLine($"Your Score is {score}");
+        // Exibe a pontuação final ao usuário
+        Console.WriteLine($"Sua pontuação final é {score}");
     }
 
 
@@ -106,8 +134,21 @@ class Program
             Console.WriteLine($"{x} - {y} = ?");
 
 
-            string user = Console.ReadLine();
-            int usr = Convert.ToInt32(user);
+            int usr;
+            while (true)
+            {
+                Console.Write("Sua resposta: ");
+                string userInput = Console.ReadLine();
+                historyArray.Add($"{x} - {y} = {result}");
+
+                if (int.TryParse(userInput, out usr))
+                {
+                    break;
+                } else
+                {
+                    Console.WriteLine("Valor incorreto.");
+                }
+            }
 
 
             if (usr == result)
@@ -140,9 +181,22 @@ class Program
 
             Console.WriteLine($"{x} x {y} = ?");
 
+            int usr;
+            while (true)
+            {
+                Console.Write("Sua resposta: ");
+                string userInput = Console.ReadLine();
 
-            string user = Console.ReadLine();
-            int usr = Convert.ToInt32(user);
+                historyArray.Add($"{x} - {y} = {result}");
+
+                if (int.TryParse(userInput, out usr))
+                {
+                    break;
+                } else
+                {
+                    Console.WriteLine("Valor incorreto.");
+                }
+            }
 
 
             if (usr == result)
@@ -176,9 +230,22 @@ class Program
             Console.WriteLine($"{x} / {y} = ?");
 
 
-            string user = Console.ReadLine();
-            int usr = Convert.ToInt32(user);
+            int usr;
+            while (true)
+            {
+                Console.Write("Sua resposta: ");
+                string userInput = Console.ReadLine();
 
+                historyArray.Add($"{x} / {y} = {result}");
+
+                if (int.TryParse(userInput, out usr))
+                {
+                    break;
+                } else
+                {
+                    Console.WriteLine("Valor incorreto.");
+                }
+            }
 
             if (usr == result)
             {
@@ -221,8 +288,10 @@ class Program
         Console.WriteLine("║   2 - Subtrair                                               ║");
         Console.WriteLine("║   3 - Multiplicar                                            ║");
         Console.WriteLine("║   4 - Dividir                                                ║");
+        Console.WriteLine("║   9 - Histórico                                              ║");
         Console.WriteLine("║   0 - Sair                                                   ║");
         Console.WriteLine("╚═════════════════════════════════════════════════════════════╝");
+
     }
 
 
